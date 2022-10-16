@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todolist</title>
+
+  <!-- bootstrap css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+    <!-- my styling -->
+    <style>
+      .btngroups
+      {
+        display: flex;
+        justify-content: center;
+      }
+
+      @media (max-width: 500px)
+      {
+        .btngroups 
+        {
+          flex-direction: column;
+        }
+
+        .btngroups button
+        {
+          margin-top: 7px;
+        }
+      }
+
+    </style>
+
+</head>
+
+<body>
+  <h1 class="p-5">
+    <center>TodoList</center>
+  </h1>
+
+  <div class="mx-auto p-3" style="width: 75%;">
+    
+    <div class="btngroups" style="width: 100%">
+      
+      <button type="button" class="btn btn-primary mx-2" 
+      data-bs-toggle="modal" 
+      data-bs-target="#showModelId">Add to List 
+    </button>
+    
+    <button type="button" class="btn btn-primary mx-2" id="clearListId" onclick="clearListFn()">Clear Todolist</button>
+    
+  </div>
+  
+  <!-- modal activity -->
+    <div class="modal fade" id="showModelId">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title">Add to Todolist</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+
+          <div class="modal-body">
+           
+              <div class="mb-3">
+                <label class="col-form-label">Title</label>
+                <input type="text" class="form-control" placeholder="Enter a Title of Todolist.." id="titleId">
+                <div class="form-text">Try to mention your title in one word ..</div>
+              </div>
+
+              <div class="mb-3">
+                <label class="col-form-label">Description</label>
+                <textarea class="form-control" 
+                placeholder="Enter a description of a Todolist.."
+                id="descriptionId"></textarea>
+                <div class="form-text">Mention your work,to do...</div>
+              </div>
+          
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+            <button type="button" class="btn btn-primary" onclick="addItemFn() ">Save</button>
+          </div>
+
+          <!-- data-bs-dismiss="modal" : dismissed the entire model from screen  -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<!-- Button trigger modal -->
+<!-- Modal : View : description -->
+<div class="modal fade" id="showDesModelId">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="modelTitleId">Modal title</h5>  
+      </div>
+
+      <div class="modal-body" id="modelDescriptionId"> desc
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+  <div class="mx-auto" style="width: 75%;">
+    <h3>Things To Do...</h3>
+
+    <table class="table table-responsive table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Task</th>
+          <th scope="col"><center>Title<center></th>
+          <!-- <th scope="col">Description</th> -->
+          <th scope="col"><center>Action</center></th>
+        </tr>
+      </thead>
+
+      <tbody class="table-group-divider" id="tBodyId">
+        <tr>
+          <th scope="row"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- footer -->
+  <footer class="fixed-bottom bg-light text-center">
+  
+    <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2);">
+      ©2022 Copyright
+      <h6 class="text-dark" href="#">Devloped by kudtarkarsahil</h6>
+    </div>
+
+  </footer>
+  
+
+  <!-- bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+  <!-- my js file -->
+  <script src="todolist.js"></script>
+
+</body>
+
+</html>
